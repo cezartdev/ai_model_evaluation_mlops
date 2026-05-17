@@ -10,3 +10,7 @@ data/
 
 # MLflow
 mlruns/
+
+
+lightning_logs
+checkpoints/
