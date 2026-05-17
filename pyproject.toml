@@ -1,0 +1,18 @@
+[project]
+name = "walmart-sales-benchmark-mlops"
+version = "0.1.0"
+description = "Walmart Sales Prediction (MLOps Focus)"
+readme = "README.md"
+requires-python = "==3.12.*"
+dependencies = [
+    "gluonts[torch]>=0.16.0",
+    "plotly>=6.7.0",
+    "scikit-learn>=1.8.0",
+]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pytest>=9.0.3",
+    "ruff>=0.15.13",
+]
