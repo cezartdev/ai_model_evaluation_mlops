@@ -5,18 +5,9 @@ description = "Walmart Sales Prediction (MLOps Focus)"
 readme = "README.md"
 requires-python = "==3.12.*"
 dependencies = [
-    "gluonts[torch]>=0.16.2",
-    "orjson>=3.11.9",
+    "autogluon>=1.5.0",
     "plotly>=6.7.0",
-    "polars>=1.40.1",
-    "pyarrow>=24.0.0",
-    "scikit-learn>=1.8.0",
-    "tensorboard>=2.20.0",
 ]
 
 [dependency-groups]
-dev = [
-    "jupyter>=1.1.1",
-    "pytest>=9.0.3",
-    "ruff>=0.15.13",
-]
+dev = ["jupyter>=1.1.1", "pytest>=9.0.3", "ruff>=0.15.13"]
