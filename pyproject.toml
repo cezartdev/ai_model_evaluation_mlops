@@ -1,7 +1,7 @@
 [project]
-name = "walmart-sales-benchmark-mlops"
+name = "ai-model-evaluation-mlops"
 version = "0.1.0"
-description = "Walmart Sales Prediction (MLOps Focus)"
+description = "AI Model Evaluation and MLOps Pipeline"
 readme = "README.md"
 requires-python = "==3.12.*"
 dependencies = [
