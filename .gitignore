@@ -1,5 +1,6 @@
 .venv
 .env*
+!.env.example
 __pycache__
 data/
 .ruff_cache/
@@ -7,12 +8,18 @@ data/
 *.pyc
 *.ipynb_checkpoints/
 *.csv
+*.xlsx
+
 
 # MLflow
 mlruns/
-
 
 lightning_logs
 checkpoints/
 
 AutogluonModels/
+
+logs/
+
+*.db
+*.sqlite
