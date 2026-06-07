@@ -5,9 +5,18 @@ description = "AI Model Evaluation and MLOps Pipeline"
 readme = "README.md"
 requires-python = "==3.12.*"
 dependencies = [
+    "apache-airflow==3.2.1",
     "autogluon>=1.5.0",
+    "mlflow>=3.12.0",
     "plotly>=6.7.0",
+    "pyyaml>=6.0.3",
 ]
 
 [dependency-groups]
 dev = ["jupyter>=1.1.1", "pytest>=9.0.3", "ruff>=0.15.13"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
+[tool.ruff]
+exclude = ["notebooks/"]

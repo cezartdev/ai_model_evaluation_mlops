@@ -1,0 +1,2 @@
+- Always use context7 for documentation even if I don't explicitly ask for it.
+- Don't write any comments in the code.

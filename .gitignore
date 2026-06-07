@@ -18,6 +18,7 @@ lightning_logs
 checkpoints/
 
 AutogluonModels/
+tmp_ag*
 
 logs/
 

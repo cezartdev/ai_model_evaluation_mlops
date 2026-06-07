@@ -36,6 +36,9 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
+      - ./config:/opt/airflow/configs:ro
+      - ./src:/opt/airflow/src:ro
+      - ./data:/data
     command: api-server
 
   airflow-scheduler:
@@ -50,6 +53,9 @@ services:
     volumes:
       - ./dags:/opt/airflow/dags
       - ./logs:/opt/airflow/logs
+      - ./config:/opt/airflow/configs:ro
+      - ./src:/opt/airflow/src:ro
+      - ./data:/data
     command: scheduler
 
   mlflow:
@@ -59,7 +65,8 @@ services:
     command: >
       mlflow server
       --backend-store-uri sqlite:////mlruns/mlflow.db
-      --default-artifact-root /mlruns
+      --artifacts-destination /mlruns
+      --serve-artifacts
       --host 0.0.0.0
     volumes:
       - mlflow_data:/mlruns

@@ -1,0 +1,32 @@
+pipeline_name: "walmart_sales"
+schedule: "0 2 * * *" # Cron
+data:
+  input_path: "/data/01_raw/Walmart_Sales.csv"
+  processed_path: "/data/02_primary/walmart_sales.csv"
+model:
+  target_column: "weekly_sales"
+  eval_metric: "WAPE"
+  time_limit_seconds: 3600
+  prediction_length: 13
+  hyperparameters:
+    RecursiveTabular:
+      - model_name: "GBM"
+      - model_name: "XGB"
+      - model_name: "CAT"
+    Naive: {}
+    SeasonalNaive: {}
+    PatchTST: {}
+    ETS: {}
+    ADIDA: {}
+    DLinear: {}
+    ARIMA: {}
+    Theta: {}
+    DeepAR: {}
+    NPTS: {}
+    TemporalFusionTransformer: {}
+    Chronos2: {}
+    SimpleFeedForward: {}
+    TiDE: {}
+    WaveNet: {}
+mlflow:
+  experiment_name: "walmart_sales"
