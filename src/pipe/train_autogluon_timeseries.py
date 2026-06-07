@@ -59,7 +59,7 @@ def main(config_path):
         prediction_length=prediction_length
     )
 
-    save_path = f"tmp_ag_models/{pipeline_name}"
+    save_path = f"models/{pipeline_name}"
     if os.path.exists(save_path):
         shutil.rmtree(save_path)
 
@@ -114,7 +114,7 @@ def main(config_path):
         mlflow.log_metrics(metrics_to_log)
         mlflow.log_param("best_model", best_model_name)
 
-        leaderboard_path = f"tmp_ag_models/{pipeline_name}_leaderboard.csv"
+        leaderboard_path = f"models/{pipeline_name}_leaderboard.csv"
         leaderboard.to_csv(leaderboard_path, index=False)
         mlflow.log_artifact(leaderboard_path, artifact_path="metadata")
 
@@ -122,7 +122,7 @@ def main(config_path):
 
         print("Logging AutoGluon model artifact to MLflow...")
         archive_path = shutil.make_archive(
-            f"tmp_ag_models/{pipeline_name}_model", "zip", save_path
+            f"models/{pipeline_name}_model", "zip", save_path
         )
         mlflow.log_artifact(archive_path, artifact_path="model")
 

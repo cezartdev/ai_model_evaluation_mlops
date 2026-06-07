@@ -19,6 +19,7 @@ checkpoints/
 
 AutogluonModels/
 tmp_ag*
+models/
 
 logs/
 
